@@ -1,0 +1,1 @@
+import { IsNumber,IsPositive,IsString,MaxLength,MinLength } from 'class-validator'; export class CreateRequestDto { @IsString() @MinLength(3) @MaxLength(120) title!:string; @IsString() @MinLength(20) description!:string; @IsNumber({maxDecimalPlaces:2}) @IsPositive() amountRequested!:number; }

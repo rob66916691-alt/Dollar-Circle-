@@ -1,0 +1,1 @@
+import { IsNumber,IsPositive,IsUUID,Max } from 'class-validator'; export class CreateContributionDto { @IsUUID() requestId!:string; @IsNumber({maxDecimalPlaces:2}) @IsPositive() @Max(100) amount!:number; }

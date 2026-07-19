@@ -1,0 +1,3 @@
+import { Column,CreateDateColumn,Entity,PrimaryGeneratedColumn,UpdateDateColumn } from 'typeorm';
+export enum RequestStatus { PENDING='pending',APPROVED='approved',FUNDED='funded',REJECTED='rejected' }
+@Entity({name:'assistance_requests'}) export class AssistanceRequest { @PrimaryGeneratedColumn('uuid') id!:string; @Column({name:'user_id',type:'uuid'}) userId!:string; @Column() title!:string; @Column({type:'text'}) description!:string; @Column({name:'amount_requested',type:'numeric',precision:12,scale:2}) amountRequested!:string; @Column({type:'enum',enum:RequestStatus,default:RequestStatus.PENDING}) status!:RequestStatus; @CreateDateColumn({name:'created_at'}) createdAt!:Date; @UpdateDateColumn({name:'updated_at'}) updatedAt!:Date; }
