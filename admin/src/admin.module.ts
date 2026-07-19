@@ -1,3 +1,4 @@
+import { AdminModule } from './admin/admin.module';
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
@@ -10,6 +11,7 @@ import { Contribution } from '../contributions/contribution.entity';
 
 @Module({
   imports: [
+    AdminModule,
     TypeOrmModule.forFeature([
       User,
       AssistanceRequest,
